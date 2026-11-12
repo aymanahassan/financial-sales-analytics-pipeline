@@ -1,0 +1,41 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListProjectBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::fsap-financial-sales-dev-268647930058"
+      ]
+    },
+    {
+      "Sid": "ReadProjectInputAndScript",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::fsap-financial-sales-dev-268647930058/raw/*",
+        "arn:aws:s3:::fsap-financial-sales-dev-268647930058/scripts/*"
+      ]
+    },
+    {
+      "Sid": "WriteGlueOutputs",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::fsap-financial-sales-dev-268647930058/curated/*",
+        "arn:aws:s3:::fsap-financial-sales-dev-268647930058/monthly_sales/*",
+        "arn:aws:s3:::fsap-financial-sales-dev-268647930058/quarantine/*",
+        "arn:aws:s3:::fsap-financial-sales-dev-268647930058/superseded/*"
+      ]
+    }
+  ]
+}

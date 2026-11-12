@@ -1,0 +1,19 @@
+# Local environments and caches
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+# Local input and generated output
+Projects/data/*
+!Projects/data/.gitkeep
+# Terraform state and local configuration
+.terraform/
+*.tfstate*
+*.tfplan
+*.tfvars
+!.tfvars.example
+.env
+.env.*
+*.log
+.DS_Store
+spark-warehouse/
