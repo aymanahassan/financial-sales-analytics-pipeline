@@ -121,4 +121,3 @@ def test_financial_mismatch(spark):
     raw = spark.createDataFrame([row(sales=19.0)], SCHEMA)
     _, quarantine, _ = classify(raw)
     assert quarantine.first().rejection_reason == "financial_reconciliation_failed"
-
